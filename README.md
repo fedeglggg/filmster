@@ -8,8 +8,6 @@ Lopez Federico
 Bruschini Maria Sol
 Santibañez Pablo
 
-Aplicación utilizada en la cursada 2019 de Ingenieria de Software. UTN-FRLP
-
 ## Dependencias
 
  - node > v10

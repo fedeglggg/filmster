@@ -6,7 +6,7 @@ Aplicación utilizada en la cursada 2019 de Ingenieria de Software. UTN-FRLP
 
 - Lopez Federico
 - Bruschini Maria Sol
-- Santibañez Pablo
+- Santibañez Acuña Pablo Salvador
 
 ## Dependencias
 

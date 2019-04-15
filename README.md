@@ -3,7 +3,8 @@
 Aplicación utilizada en la cursada 2019 de Ingenieria de Software. UTN-FRLP
 
 # Integrantes (Grupo 5)
-- Bruschini Maria Sol
+
+- Bruschini María Sol
 - Lopez Ferico
 - Santibañez Acuña Pablo Salvador
 

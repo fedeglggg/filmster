@@ -7,7 +7,11 @@ const table = Table('#movies', {
         { label: 'Descripción', field: 'description' },
         { label: 'Año', field: 'year' },
         { label: 'Pais', field: 'country' },
+<<<<<<< HEAD
         
+=======
+        { label: 'Director', field: 'directors' },
+>>>>>>> 542b4578cc0368f05cbc25c596a820150601b7dd
         {
             label: 'Guionistas',
             field: 'writers',

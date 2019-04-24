@@ -7,6 +7,7 @@ const table = Table('#movies', {
         { label: 'Descripción', field: 'description' },
         { label: 'Año', field: 'year' },
         { label: 'Pais', field: 'country' },
+        
         {
             label: 'Guionistas',
             field: 'writers',
@@ -23,3 +24,5 @@ const table = Table('#movies', {
 })
 
 movieService.getAll().then(table.update)
+
+

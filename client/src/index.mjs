@@ -9,7 +9,7 @@ const table = Table('#movies', {
         { label: 'Pais', field: 'country' },
         { label: 'Director', field: 'directors' },
         {
-            label: 'Guionistas',
+            label: 'GUIONISTAS',
             field: 'writers',
             render: function (data) { return data.join(', ') }
         }
@@ -17,7 +17,7 @@ const table = Table('#movies', {
     data: [],
     onSelectedRow: function (row) {
         console.log(table.getSelectedRows())
-    },
+    }
     onDeselectedRow: function () {
         console.log(table.getSelectedRows())
     }

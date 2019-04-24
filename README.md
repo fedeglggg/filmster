@@ -1,6 +1,12 @@
-# Filmster
+﻿# Filmster
 
 Aplicación utilizada en la cursada 2019 de Ingenieria de Software. UTN-FRLP
+
+## Integrantes (Grupo 5)
+
+- Bruschini María Sol
+- Lopez Federico Gaston
+- Santibañez Acuña Pablo Salvador
 
 ## Dependencias
 

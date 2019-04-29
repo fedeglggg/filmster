@@ -7,11 +7,7 @@ const table = Table('#movies', {
         { label: 'Descripción', field: 'description' },
         { label: 'Año', field: 'year' },
         { label: 'Pais', field: 'country' },
-<<<<<<< HEAD
-        
-=======
         { label: 'Director', field: 'directors' },
->>>>>>> 542b4578cc0368f05cbc25c596a820150601b7dd
         {
             label: 'GUIONISTAS',
             field: 'writers',
@@ -21,7 +17,7 @@ const table = Table('#movies', {
     data: [],
     onSelectedRow: function (row) {
         console.log(table.getSelectedRows())
-    }
+    },
     onDeselectedRow: function () {
         console.log(table.getSelectedRows())
     }

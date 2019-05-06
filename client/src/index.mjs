@@ -19,11 +19,17 @@ window.table = Table('#movies', {
     // Esta funcion se ejecuta cuando seleccionamos una pelicula
     onSelectedRow: function (row) {
         console.log(table.getSelectedRows())
+
+        document.getElementById("addMovieBtn").disabled = true // nuevo 1
     },
 
     // Esta funcion se ejecuta cuando deseleccionamos una pelicula
     onDeselectedRow: function () {
         console.log(table.getSelectedRows())
+
+        document.getElementById("addMovieBtn").disabled = false // nuevo 2
+
+
     }
 })
 

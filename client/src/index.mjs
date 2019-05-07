@@ -91,7 +91,7 @@ function saveMovie() {
         writers: parseCSV($refs.movieWriters.value),
         directors: parseCSV($refs.movieDirectors.value)
     }
-
+    movieService.create(movie)
     console.log(movie)
 }
 

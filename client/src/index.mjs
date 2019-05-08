@@ -83,7 +83,7 @@ async function saveMovie() {
     const movie = {
         name: $refs.movieName.value,
         plot: $refs.moviePlot.value,
-        year: new Date($refs.movieReleaseDate.value),
+        year: new Date($refs.movieReleaseDate.value).getFullYear(),
         country: $refs.movieCountry.value,
         runtime: +$refs.movieRuntime.value,
         language: $refs.movieLanguage.value,
@@ -91,11 +91,13 @@ async function saveMovie() {
         writers: parseCSV($refs.movieWriters.value),
         directors: parseCSV($refs.movieDirectors.value)
     }
-    const resp = await movieService.create(movie)
-    movieService.getAll().then(table.update)
-    
-    console.log(resp)
-    //console.log(movie)
+
+    await movieService.create(movie)
+    console.log(movie)
+    closeModal()
+
+    location.reload()
+
 }
 
 // Levantamos los listeners de la app

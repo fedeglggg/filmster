@@ -79,7 +79,7 @@ function parseCSV(val) {
 /*
  * Guarda una pelicula
  */
-function saveMovie() {
+async function saveMovie() {
     const movie = {
         name: $refs.movieName.value,
         plot: $refs.moviePlot.value,
@@ -91,8 +91,11 @@ function saveMovie() {
         writers: parseCSV($refs.movieWriters.value),
         directors: parseCSV($refs.movieDirectors.value)
     }
-    movieService.create(movie)
-    console.log(movie)
+    const resp = await movieService.create(movie)
+    movieService.getAll().then(table.update)
+    
+    console.log(resp)
+    //console.log(movie)
 }
 
 // Levantamos los listeners de la app

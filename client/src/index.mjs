@@ -80,14 +80,15 @@ function parseCSV(val) {
  * Guarda una pelicula
  */
 function saveMovie() {
+    var date = new Date($refs.movieReleaseDate.value)
     const movie = {
         title: $refs.movieName.value,
-        plot: $refs.moviePlot.value,
-        year: new Date($refs.movieReleaseDate.value),
+        description: $refs.moviePlot.value,
+        year: date.getFullYear(),
         country: $refs.movieCountry.value,
         runtime: +$refs.movieRuntime.value,
         language: $refs.movieLanguage.value,
-        generes: parseCSV($refs.movieGeneres.value),
+        genres: parseCSV($refs.movieGeneres.value),
         writers: parseCSV($refs.movieWriters.value),
         directors: parseCSV($refs.movieDirectors.value)
     }

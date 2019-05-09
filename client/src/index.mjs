@@ -90,10 +90,9 @@ function saveMovie() {
         language: $refs.movieLanguage.value,
         genres: parseCSV($refs.movieGeneres.value),
         directors: parseCSV($refs.movieDirectors.value),
-        writers: parseCSV($refs.movieWriters.value)
-
-        
+        writers: parseCSV($refs.movieWriters.value)  
     }
+    
     movieService.create(movie)
     console.log(movie)
 }

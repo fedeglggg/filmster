@@ -85,23 +85,14 @@ function saveMovie() {
         title: $refs.movieName.value,
         description: $refs.moviePlot.value,
         year: date.getFullYear(),
-<<<<<<< HEAD
-        country: $refs.movieCountry.value,
-=======
->>>>>>> feature/#2
         runtime: +$refs.movieRuntime.value,
         country: $refs.movieCountry.value,
         language: $refs.movieLanguage.value,
         genres: parseCSV($refs.movieGeneres.value),
-<<<<<<< HEAD
-        writers: parseCSV($refs.movieWriters.value),
-        directors: parseCSV($refs.movieDirectors.value)
-=======
         directors: parseCSV($refs.movieDirectors.value),
         writers: parseCSV($refs.movieWriters.value)
 
         
->>>>>>> feature/#2
     }
     movieService.create(movie)
     console.log(movie)

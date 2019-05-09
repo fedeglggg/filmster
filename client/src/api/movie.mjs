@@ -7,15 +7,6 @@ function getAll() {
 
 
 function create(data){
-<<<<<<< HEAD
-  var xhttp = new XMLHttpRequest();
-  xhttp.open("POST", "http://localhost:3000/api/v1/movies",true);
-  xhttp.setRequestHeader("Content-Type","application/json ; charset=UTF-8");
-  var input = JSON.stringify(data);
-  xhttp.send(input)
-}
- 
-=======
   return fetch('/api/v1/movies', {
       method: 'POST', 
       body:JSON.stringify(data) , 
@@ -26,7 +17,6 @@ function create(data){
     .then(res => res.json())
     .catch(error => console.error('Error:', error))
     .then(response => console.log('Success:', response));
->>>>>>> feature/#2
 
 
 

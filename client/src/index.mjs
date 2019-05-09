@@ -81,7 +81,7 @@ function parseCSV(val) {
  */
 function saveMovie() {
     const movie = {
-        name: $refs.movieName.value,
+        title: $refs.movieName.value,
         plot: $refs.moviePlot.value,
         year: new Date($refs.movieReleaseDate.value),
         country: $refs.movieCountry.value,

@@ -7,17 +7,12 @@ function getAll() {
 
 
 function create(data){
-  return fetch('/api/v1/movies', {
-      method: 'POST', 
-      body: data, 
-      headers:{
-        'Content-Type': 'application/json'
-      }
-    })
-    .then(res => res.json())
-    .catch(error => console.error('Error:', error))
-    .then(response => console.log('Success:', response));
-}
+  var xhttp = new XMLHttpRequest();
+  xhttp.open("POST", "http://localhost:3000/api/v1/movies",true);
+  xhttp.setRequestHeader("Content-Type","application/json ; charset=UTF-8");
+  var input = JSON.stringify(data);
+  xhttp.send(input)}
+ 
 
 
 export default {

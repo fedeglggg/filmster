@@ -84,7 +84,7 @@ function saveMovie() {
     const movie = {
         title: $refs.movieName.value,
         description: $refs.moviePlot.value,
-        year: date.year,
+        year: date.getFullYear(),
         runtime: +$refs.movieRuntime.value,
         country: $refs.movieCountry.value,
         language: $refs.movieLanguage.value,

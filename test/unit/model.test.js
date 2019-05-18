@@ -69,3 +69,34 @@ test('Obtener película', async () => {
 
     // Completar test
 });
+
+test('Modelo que permite obtener todas las películas', async () => {
+    const movieData = {
+        title: 'Jurassic Park',
+        description: 'During a preview tour, a theme park suffers a major power breakdown that allows its cloned dinosaur exhibits to run amok.',
+        year: 1993,
+        runtime: 127,
+        country: 'United States',
+        language: 'English',
+        genres: ['Adventure', 'Sci-Fi', 'Thriller'],
+        directors: ['Steven Spielberg'],
+        writers: ['Michael Crichton', 'Michael Crichton', 'David Koepp']
+    };
+
+
+    const movie = await MovieModels.create(movieData)
+    const recivedMovies = await MovieModels.getAll()
+
+    expect(recivedMovies[0].title).toEqual(movieData.title)
+    expect(recivedMovies[0].description).toEqual(movieData.description)
+    expect(recivedMovies[0].genres).toEqual(movieData.genres)
+    expect(recivedMovies[0].directors).toEqual(movieData.directors)
+    expect(recivedMovies[0].writers).toEqual(movieData.writers)
+    expect(recivedMovies[0].runtime).toEqual(movieData.runtime)
+    expect(recivedMovies[0].year).toEqual(movieData.year)
+    expect(recivedMovies[0].language).toEqual(movieData.language)
+    expect(recivedMovies[0].country).toEqual(movieData.country)
+      
+});
+
+

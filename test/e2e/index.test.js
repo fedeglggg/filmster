@@ -156,7 +156,7 @@ test('se deshabilite el botón agrega cuando hay seleccionada al menos una pelí
     //chequear boton
     await page.$eval('table#movies tbody tr td:nth-child(1) input', firstCheck => firstCheck.click());
     
-    
+    //boton desabilitado
     const isDisabled = await page.evaluate(button => button.disabled , agregarBtn)
     
     

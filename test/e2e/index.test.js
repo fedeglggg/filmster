@@ -119,7 +119,7 @@ test('Se debería poder seleccionar una película', async () => {
     await page.reload();
     const rows = await page.$$('table#movies tbody tr');
 
-    expect(rows.length).toBe(0);
+    expect(rows.length).toBe(2);
 
     await page.$eval('table#movies tbody tr td:nth-child(1) input', firstCheck => firstCheck.click());
     const selectedRows = await page.evaluate(() => window.table.getSelectedRows());

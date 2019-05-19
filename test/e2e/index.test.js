@@ -80,6 +80,8 @@ test('La tabla debería mostrar los datos cargados en la db', async () => {
             'Content-Type': 'application/json'
         }
     });
+    const table = await page.$('table#movies');
+    expect(table).not.toBe(null);
 
     await page.reload();
     const rows = await page.$$('table#movies tbody tr');
@@ -110,14 +112,59 @@ test('Se debería poder seleccionar una película', async () => {
             'Content-Type': 'application/json'
         }
     });
+    const table = await page.$('table#movies');
+    expect(table).not.toBe(null);
+
 
     await page.reload();
     const rows = await page.$$('table#movies tbody tr');
 
-    expect(rows.length).toBe(1);
+    expect(rows.length).toBe(0);
 
     await page.$eval('table#movies tbody tr td:nth-child(1) input', firstCheck => firstCheck.click());
     const selectedRows = await page.evaluate(() => window.table.getSelectedRows());
     expect(selectedRows.length).toBe(1);
     expect(selectedRows[0].title).toBe(movie.title);
+})
+test('se deshabilite el botón agrega cuando hay seleccionada al menos una película', async () =>{
+    
+    //crear pelicula
+    const movie = {
+        title: 'Back to the Future',
+        description: 'Marty McFly, a 17-year-old high school student, is accidentally sent thirty years into the past in a time-traveling DeLorean invented by his close friend, the maverick scientist Doc Brown.',
+        year: 1985,
+        runtime: 116,
+        country: 'United States',
+        language: 'English',
+        genres: ['Adventure', 'Comedy', 'Science Fiction'],
+        directors: ['Robert Zemeckis'],
+        writers: ['Robert Zemeckis', 'Bob Gale']
+    };
+
+    //cargar pelicula
+    await fetch(`${baseURL}/api/v1/movies`, {
+        method: 'POST',
+        body: JSON.stringify(movie),
+        headers:{
+            'Content-Type': 'application/json'
+        }
+    });
+
+   
+   //boton agregar
+    const agregarBtn = await page.$('.card-header-actions button:nth-child(1)');
+    //chequear boton
+    await page.$eval('table#movies tbody tr td:nth-child(1) input', firstCheck => firstCheck.click());
+    
+    
+    const isDisabled = await page.evaluate(button => button.disabled , agregarBtn)
+    
+    
+
+    expect(isDisabled).toBeTruthy()
+
+
+    
+
+
 })

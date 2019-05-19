@@ -127,6 +127,8 @@ test('Se debería poder seleccionar una película', async () => {
     expect(selectedRows[0].title).toBe(movie.title);
 })
 test('se deshabilite el botón agrega cuando hay seleccionada al menos una película', async () =>{
+    
+    //crear pelicula
     const movie = {
         title: 'Back to the Future',
         description: 'Marty McFly, a 17-year-old high school student, is accidentally sent thirty years into the past in a time-traveling DeLorean invented by his close friend, the maverick scientist Doc Brown.',
@@ -139,6 +141,7 @@ test('se deshabilite el botón agrega cuando hay seleccionada al menos una pelí
         writers: ['Robert Zemeckis', 'Bob Gale']
     };
 
+    //cargar pelicula
     await fetch(`${baseURL}/api/v1/movies`, {
         method: 'POST',
         body: JSON.stringify(movie),
@@ -148,9 +151,12 @@ test('se deshabilite el botón agrega cuando hay seleccionada al menos una pelí
     });
 
    
-   
+   //boton agregar
     const agregarBtn = await page.$('.card-header-actions button:nth-child(1)');
+    //chequear boton
     await page.$eval('table#movies tbody tr td:nth-child(1) input', firstCheck => firstCheck.click());
+    
+    
     const isDisabled = await page.evaluate(button => button.disabled , agregarBtn)
     
     
